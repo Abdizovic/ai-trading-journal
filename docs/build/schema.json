@@ -1,0 +1,914 @@
+{
+ "cols": [
+  {
+   "t": "ai_analyses",
+   "n": "id",
+   "ty": "uuid",
+   "nl": "NO",
+   "d": "gen_random_uuid()",
+   "pk": true
+  },
+  {
+   "t": "ai_analyses",
+   "n": "user_id",
+   "ty": "uuid",
+   "nl": "NO",
+   "d": null,
+   "pk": false
+  },
+  {
+   "t": "ai_analyses",
+   "n": "analysis_period",
+   "ty": "text",
+   "nl": "NO",
+   "d": null,
+   "pk": false
+  },
+  {
+   "t": "ai_analyses",
+   "n": "period_start",
+   "ty": "timestamp with time zone",
+   "nl": "YES",
+   "d": null,
+   "pk": false
+  },
+  {
+   "t": "ai_analyses",
+   "n": "period_end",
+   "ty": "timestamp with time zone",
+   "nl": "YES",
+   "d": null,
+   "pk": false
+  },
+  {
+   "t": "ai_analyses",
+   "n": "trades_analyzed",
+   "ty": "integer",
+   "nl": "NO",
+   "d": null,
+   "pk": false
+  },
+  {
+   "t": "ai_analyses",
+   "n": "scope",
+   "ty": "text",
+   "nl": "NO",
+   "d": "'portfolio'::text",
+   "pk": false
+  },
+  {
+   "t": "ai_analyses",
+   "n": "trade_id",
+   "ty": "uuid",
+   "nl": "YES",
+   "d": null,
+   "pk": false
+  },
+  {
+   "t": "ai_analyses",
+   "n": "summary",
+   "ty": "text",
+   "nl": "NO",
+   "d": null,
+   "pk": false
+  },
+  {
+   "t": "ai_analyses",
+   "n": "analysis_result",
+   "ty": "jsonb",
+   "nl": "NO",
+   "d": null,
+   "pk": false
+  },
+  {
+   "t": "ai_analyses",
+   "n": "model",
+   "ty": "text",
+   "nl": "NO",
+   "d": null,
+   "pk": false
+  },
+  {
+   "t": "ai_analyses",
+   "n": "created_at",
+   "ty": "timestamp with time zone",
+   "nl": "NO",
+   "d": "now()",
+   "pk": false
+  },
+  {
+   "t": "ai_requests",
+   "n": "id",
+   "ty": "uuid",
+   "nl": "NO",
+   "d": "gen_random_uuid()",
+   "pk": true
+  },
+  {
+   "t": "ai_requests",
+   "n": "user_id",
+   "ty": "uuid",
+   "nl": "NO",
+   "d": null,
+   "pk": false
+  },
+  {
+   "t": "ai_requests",
+   "n": "status",
+   "ty": "text",
+   "nl": "NO",
+   "d": null,
+   "pk": false
+  },
+  {
+   "t": "ai_requests",
+   "n": "scope",
+   "ty": "text",
+   "nl": "NO",
+   "d": "'portfolio'::text",
+   "pk": false
+  },
+  {
+   "t": "ai_requests",
+   "n": "trades_analyzed",
+   "ty": "integer",
+   "nl": "NO",
+   "d": "0",
+   "pk": false
+  },
+  {
+   "t": "ai_requests",
+   "n": "latency_ms",
+   "ty": "integer",
+   "nl": "NO",
+   "d": "0",
+   "pk": false
+  },
+  {
+   "t": "ai_requests",
+   "n": "error_code",
+   "ty": "text",
+   "nl": "YES",
+   "d": null,
+   "pk": false
+  },
+  {
+   "t": "ai_requests",
+   "n": "model",
+   "ty": "text",
+   "nl": "YES",
+   "d": null,
+   "pk": false
+  },
+  {
+   "t": "ai_requests",
+   "n": "created_at",
+   "ty": "timestamp with time zone",
+   "nl": "NO",
+   "d": "now()",
+   "pk": false
+  },
+  {
+   "t": "audit_logs",
+   "n": "id",
+   "ty": "uuid",
+   "nl": "NO",
+   "d": "gen_random_uuid()",
+   "pk": true
+  },
+  {
+   "t": "audit_logs",
+   "n": "actor_id",
+   "ty": "uuid",
+   "nl": "YES",
+   "d": null,
+   "pk": false
+  },
+  {
+   "t": "audit_logs",
+   "n": "action",
+   "ty": "text",
+   "nl": "NO",
+   "d": null,
+   "pk": false
+  },
+  {
+   "t": "audit_logs",
+   "n": "target",
+   "ty": "text",
+   "nl": "YES",
+   "d": null,
+   "pk": false
+  },
+  {
+   "t": "audit_logs",
+   "n": "metadata",
+   "ty": "jsonb",
+   "nl": "NO",
+   "d": "'{}'::jsonb",
+   "pk": false
+  },
+  {
+   "t": "audit_logs",
+   "n": "created_at",
+   "ty": "timestamp with time zone",
+   "nl": "NO",
+   "d": "now()",
+   "pk": false
+  },
+  {
+   "t": "notifications",
+   "n": "id",
+   "ty": "uuid",
+   "nl": "NO",
+   "d": "gen_random_uuid()",
+   "pk": true
+  },
+  {
+   "t": "notifications",
+   "n": "user_id",
+   "ty": "uuid",
+   "nl": "NO",
+   "d": null,
+   "pk": false
+  },
+  {
+   "t": "notifications",
+   "n": "title",
+   "ty": "text",
+   "nl": "NO",
+   "d": null,
+   "pk": false
+  },
+  {
+   "t": "notifications",
+   "n": "message",
+   "ty": "text",
+   "nl": "NO",
+   "d": null,
+   "pk": false
+  },
+  {
+   "t": "notifications",
+   "n": "read",
+   "ty": "boolean",
+   "nl": "NO",
+   "d": "false",
+   "pk": false
+  },
+  {
+   "t": "notifications",
+   "n": "created_at",
+   "ty": "timestamp with time zone",
+   "nl": "NO",
+   "d": "now()",
+   "pk": false
+  },
+  {
+   "t": "profiles",
+   "n": "id",
+   "ty": "uuid",
+   "nl": "NO",
+   "d": "gen_random_uuid()",
+   "pk": true
+  },
+  {
+   "t": "profiles",
+   "n": "user_id",
+   "ty": "uuid",
+   "nl": "NO",
+   "d": null,
+   "pk": false
+  },
+  {
+   "t": "profiles",
+   "n": "full_name",
+   "ty": "text",
+   "nl": "NO",
+   "d": null,
+   "pk": false
+  },
+  {
+   "t": "profiles",
+   "n": "email",
+   "ty": "text",
+   "nl": "NO",
+   "d": null,
+   "pk": false
+  },
+  {
+   "t": "profiles",
+   "n": "role",
+   "ty": "text",
+   "nl": "NO",
+   "d": "'trader'::text",
+   "pk": false
+  },
+  {
+   "t": "profiles",
+   "n": "status",
+   "ty": "text",
+   "nl": "NO",
+   "d": "'active'::text",
+   "pk": false
+  },
+  {
+   "t": "profiles",
+   "n": "profile_image",
+   "ty": "text",
+   "nl": "YES",
+   "d": null,
+   "pk": false
+  },
+  {
+   "t": "profiles",
+   "n": "trading_experience",
+   "ty": "text",
+   "nl": "YES",
+   "d": null,
+   "pk": false
+  },
+  {
+   "t": "profiles",
+   "n": "preferred_sessions",
+   "ty": "ARRAY",
+   "nl": "NO",
+   "d": "'{}'::text[]",
+   "pk": false
+  },
+  {
+   "t": "profiles",
+   "n": "preferred_pairs",
+   "ty": "ARRAY",
+   "nl": "NO",
+   "d": "'{}'::text[]",
+   "pk": false
+  },
+  {
+   "t": "profiles",
+   "n": "last_active_at",
+   "ty": "timestamp with time zone",
+   "nl": "YES",
+   "d": null,
+   "pk": false
+  },
+  {
+   "t": "profiles",
+   "n": "created_at",
+   "ty": "timestamp with time zone",
+   "nl": "NO",
+   "d": "now()",
+   "pk": false
+  },
+  {
+   "t": "profiles",
+   "n": "updated_at",
+   "ty": "timestamp with time zone",
+   "nl": "NO",
+   "d": "now()",
+   "pk": false
+  },
+  {
+   "t": "system_settings",
+   "n": "id",
+   "ty": "boolean",
+   "nl": "NO",
+   "d": "true",
+   "pk": true
+  },
+  {
+   "t": "system_settings",
+   "n": "ai_enabled",
+   "ty": "boolean",
+   "nl": "NO",
+   "d": "true",
+   "pk": false
+  },
+  {
+   "t": "system_settings",
+   "n": "ai_daily_limit_per_user",
+   "ty": "integer",
+   "nl": "NO",
+   "d": "10",
+   "pk": false
+  },
+  {
+   "t": "system_settings",
+   "n": "min_trades_for_ai",
+   "ty": "integer",
+   "nl": "NO",
+   "d": "5",
+   "pk": false
+  },
+  {
+   "t": "system_settings",
+   "n": "registration_open",
+   "ty": "boolean",
+   "nl": "NO",
+   "d": "true",
+   "pk": false
+  },
+  {
+   "t": "system_settings",
+   "n": "maintenance_mode",
+   "ty": "boolean",
+   "nl": "NO",
+   "d": "false",
+   "pk": false
+  },
+  {
+   "t": "system_settings",
+   "n": "max_screenshot_mb",
+   "ty": "integer",
+   "nl": "NO",
+   "d": "5",
+   "pk": false
+  },
+  {
+   "t": "system_settings",
+   "n": "updated_at",
+   "ty": "timestamp with time zone",
+   "nl": "NO",
+   "d": "now()",
+   "pk": false
+  },
+  {
+   "t": "system_settings",
+   "n": "updated_by",
+   "ty": "uuid",
+   "nl": "YES",
+   "d": null,
+   "pk": false
+  },
+  {
+   "t": "trades",
+   "n": "id",
+   "ty": "uuid",
+   "nl": "NO",
+   "d": "gen_random_uuid()",
+   "pk": true
+  },
+  {
+   "t": "trades",
+   "n": "user_id",
+   "ty": "uuid",
+   "nl": "NO",
+   "d": "auth.uid()",
+   "pk": false
+  },
+  {
+   "t": "trades",
+   "n": "currency_pair",
+   "ty": "text",
+   "nl": "NO",
+   "d": null,
+   "pk": false
+  },
+  {
+   "t": "trades",
+   "n": "direction",
+   "ty": "text",
+   "nl": "NO",
+   "d": null,
+   "pk": false
+  },
+  {
+   "t": "trades",
+   "n": "entry_price",
+   "ty": "numeric",
+   "nl": "NO",
+   "d": null,
+   "pk": false
+  },
+  {
+   "t": "trades",
+   "n": "exit_price",
+   "ty": "numeric",
+   "nl": "NO",
+   "d": null,
+   "pk": false
+  },
+  {
+   "t": "trades",
+   "n": "stop_loss",
+   "ty": "numeric",
+   "nl": "YES",
+   "d": null,
+   "pk": false
+  },
+  {
+   "t": "trades",
+   "n": "take_profit",
+   "ty": "numeric",
+   "nl": "YES",
+   "d": null,
+   "pk": false
+  },
+  {
+   "t": "trades",
+   "n": "position_size",
+   "ty": "numeric",
+   "nl": "NO",
+   "d": null,
+   "pk": false
+  },
+  {
+   "t": "trades",
+   "n": "risk_amount",
+   "ty": "numeric",
+   "nl": "YES",
+   "d": null,
+   "pk": false
+  },
+  {
+   "t": "trades",
+   "n": "reward_amount",
+   "ty": "numeric",
+   "nl": "YES",
+   "d": null,
+   "pk": false
+  },
+  {
+   "t": "trades",
+   "n": "risk_reward_ratio",
+   "ty": "numeric",
+   "nl": "YES",
+   "d": null,
+   "pk": false
+  },
+  {
+   "t": "trades",
+   "n": "profit_loss",
+   "ty": "numeric",
+   "nl": "NO",
+   "d": null,
+   "pk": false
+  },
+  {
+   "t": "trades",
+   "n": "trading_session",
+   "ty": "text",
+   "nl": "NO",
+   "d": null,
+   "pk": false
+  },
+  {
+   "t": "trades",
+   "n": "strategy",
+   "ty": "text",
+   "nl": "NO",
+   "d": null,
+   "pk": false
+  },
+  {
+   "t": "trades",
+   "n": "trade_result",
+   "ty": "text",
+   "nl": "NO",
+   "d": null,
+   "pk": false
+  },
+  {
+   "t": "trades",
+   "n": "emotional_state",
+   "ty": "text",
+   "nl": "YES",
+   "d": null,
+   "pk": false
+  },
+  {
+   "t": "trades",
+   "n": "entry_reason",
+   "ty": "text",
+   "nl": "YES",
+   "d": null,
+   "pk": false
+  },
+  {
+   "t": "trades",
+   "n": "notes",
+   "ty": "text",
+   "nl": "YES",
+   "d": null,
+   "pk": false
+  },
+  {
+   "t": "trades",
+   "n": "screenshot_url",
+   "ty": "text",
+   "nl": "YES",
+   "d": null,
+   "pk": false
+  },
+  {
+   "t": "trades",
+   "n": "trade_date",
+   "ty": "timestamp with time zone",
+   "nl": "NO",
+   "d": null,
+   "pk": false
+  },
+  {
+   "t": "trades",
+   "n": "created_at",
+   "ty": "timestamp with time zone",
+   "nl": "NO",
+   "d": "now()",
+   "pk": false
+  },
+  {
+   "t": "trades",
+   "n": "updated_at",
+   "ty": "timestamp with time zone",
+   "nl": "NO",
+   "d": "now()",
+   "pk": false
+  },
+  {
+   "t": "trading_goals",
+   "n": "id",
+   "ty": "uuid",
+   "nl": "NO",
+   "d": "gen_random_uuid()",
+   "pk": true
+  },
+  {
+   "t": "trading_goals",
+   "n": "user_id",
+   "ty": "uuid",
+   "nl": "NO",
+   "d": "auth.uid()",
+   "pk": false
+  },
+  {
+   "t": "trading_goals",
+   "n": "title",
+   "ty": "text",
+   "nl": "NO",
+   "d": null,
+   "pk": false
+  },
+  {
+   "t": "trading_goals",
+   "n": "description",
+   "ty": "text",
+   "nl": "YES",
+   "d": null,
+   "pk": false
+  },
+  {
+   "t": "trading_goals",
+   "n": "metric",
+   "ty": "text",
+   "nl": "NO",
+   "d": "'custom'::text",
+   "pk": false
+  },
+  {
+   "t": "trading_goals",
+   "n": "target_value",
+   "ty": "numeric",
+   "nl": "NO",
+   "d": null,
+   "pk": false
+  },
+  {
+   "t": "trading_goals",
+   "n": "current_value",
+   "ty": "numeric",
+   "nl": "NO",
+   "d": "0",
+   "pk": false
+  },
+  {
+   "t": "trading_goals",
+   "n": "start_date",
+   "ty": "timestamp with time zone",
+   "nl": "NO",
+   "d": null,
+   "pk": false
+  },
+  {
+   "t": "trading_goals",
+   "n": "end_date",
+   "ty": "timestamp with time zone",
+   "nl": "NO",
+   "d": null,
+   "pk": false
+  },
+  {
+   "t": "trading_goals",
+   "n": "status",
+   "ty": "text",
+   "nl": "NO",
+   "d": "'active'::text",
+   "pk": false
+  },
+  {
+   "t": "trading_goals",
+   "n": "created_at",
+   "ty": "timestamp with time zone",
+   "nl": "NO",
+   "d": "now()",
+   "pk": false
+  },
+  {
+   "t": "trading_goals",
+   "n": "updated_at",
+   "ty": "timestamp with time zone",
+   "nl": "NO",
+   "d": "now()",
+   "pk": false
+  },
+  {
+   "t": "user_settings",
+   "n": "user_id",
+   "ty": "uuid",
+   "nl": "NO",
+   "d": null,
+   "pk": true
+  },
+  {
+   "t": "user_settings",
+   "n": "notifications_enabled",
+   "ty": "boolean",
+   "nl": "NO",
+   "d": "true",
+   "pk": false
+  },
+  {
+   "t": "user_settings",
+   "n": "goal_reminders",
+   "ty": "boolean",
+   "nl": "NO",
+   "d": "true",
+   "pk": false
+  },
+  {
+   "t": "user_settings",
+   "n": "ai_ready_alerts",
+   "ty": "boolean",
+   "nl": "NO",
+   "d": "true",
+   "pk": false
+  },
+  {
+   "t": "user_settings",
+   "n": "ai_include_notes",
+   "ty": "boolean",
+   "nl": "NO",
+   "d": "true",
+   "pk": false
+  },
+  {
+   "t": "user_settings",
+   "n": "ai_include_emotions",
+   "ty": "boolean",
+   "nl": "NO",
+   "d": "true",
+   "pk": false
+  },
+  {
+   "t": "user_settings",
+   "n": "ai_default_period",
+   "ty": "text",
+   "nl": "NO",
+   "d": "'90d'::text",
+   "pk": false
+  },
+  {
+   "t": "user_settings",
+   "n": "theme",
+   "ty": "text",
+   "nl": "NO",
+   "d": "'system'::text",
+   "pk": false
+  },
+  {
+   "t": "user_settings",
+   "n": "biometric_lock",
+   "ty": "boolean",
+   "nl": "NO",
+   "d": "false",
+   "pk": false
+  },
+  {
+   "t": "user_settings",
+   "n": "auto_logout_minutes",
+   "ty": "integer",
+   "nl": "NO",
+   "d": "30",
+   "pk": false
+  },
+  {
+   "t": "user_settings",
+   "n": "updated_at",
+   "ty": "timestamp with time zone",
+   "nl": "NO",
+   "d": "now()",
+   "pk": false
+  }
+ ],
+ "fks": [
+  {
+   "src": "profiles",
+   "col": "user_id",
+   "dst": "auth.users"
+  },
+  {
+   "src": "trades",
+   "col": "user_id",
+   "dst": "auth.users"
+  },
+  {
+   "src": "trading_goals",
+   "col": "user_id",
+   "dst": "auth.users"
+  },
+  {
+   "src": "ai_analyses",
+   "col": "user_id",
+   "dst": "auth.users"
+  },
+  {
+   "src": "ai_analyses",
+   "col": "trade_id",
+   "dst": "trades"
+  },
+  {
+   "src": "notifications",
+   "col": "user_id",
+   "dst": "auth.users"
+  },
+  {
+   "src": "user_settings",
+   "col": "user_id",
+   "dst": "auth.users"
+  },
+  {
+   "src": "system_settings",
+   "col": "updated_by",
+   "dst": "auth.users"
+  },
+  {
+   "src": "audit_logs",
+   "col": "actor_id",
+   "dst": "auth.users"
+  },
+  {
+   "src": "ai_requests",
+   "col": "user_id",
+   "dst": "auth.users"
+  }
+ ],
+ "pol": [
+  {
+   "tablename": "trades",
+   "n": 4
+  },
+  {
+   "tablename": "system_settings",
+   "n": 2
+  },
+  {
+   "tablename": "notifications",
+   "n": 3
+  },
+  {
+   "tablename": "ai_requests",
+   "n": 1
+  },
+  {
+   "tablename": "profiles",
+   "n": 2
+  },
+  {
+   "tablename": "ai_analyses",
+   "n": 2
+  },
+  {
+   "tablename": "user_settings",
+   "n": 2
+  },
+  {
+   "tablename": "trading_goals",
+   "n": 4
+  }
+ ],
+ "fns": [
+  "admin_ai_stats",
+  "admin_audit_logs",
+  "admin_overview",
+  "admin_report",
+  "admin_set_user_status",
+  "admin_trader",
+  "admin_traders",
+  "admin_trading_stats",
+  "ai_quota"
+ ],
+ "counts": {
+  "checks": 54,
+  "idx": 25,
+  "triggers": 14
+ }
+}

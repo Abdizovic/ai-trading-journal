@@ -1,0 +1,65 @@
+{
+  "_README": "Edit these values, then run:  cd docs && npm run build   (regenerates AI_Trading_Journal_Documentation.pdf)",
+
+  "student": {
+    "name": "YOUR FULL NAME",
+    "regNo": "BSCS/20XX/XXXXX"
+  },
+  "supervisor": "SUPERVISOR NAME",
+  "university": "Umma University",
+  "faculty": "Faculty of Computer Science",
+  "location": "Kajiado, Kenya",
+  "degree": "Bachelor of Science in Computer Science",
+  "submissionDate": "October, 2026",
+  "repositoryUrl": "https://github.com/your-username/ai-trading-journal",
+
+  "_SURVEY_NOTE": "IMPORTANT: the numbers below are SAMPLE values used to lay out the charts and tables. Replace them with the real results of YOUR interviews and questionnaires before submission.",
+  "survey": {
+    "participants": [
+      ["Retail Forex Traders", 30],
+      ["Trading Mentors / Coaches", 10],
+      ["Trading Community Administrators", 5]
+    ],
+    "traderQuestions": [
+      {
+        "question": "How do you currently record your trades?",
+        "caption": "Current Trade Recording Methods",
+        "data": [["Do not record", 14], ["Notebook / paper", 7], ["Spreadsheet", 6], ["Dedicated app", 3]]
+      },
+      {
+        "question": "How often do you review your past trading performance?",
+        "caption": "Frequency of Performance Review",
+        "data": [["Never", 11], ["Rarely", 10], ["Monthly", 6], ["Weekly", 3]]
+      },
+      {
+        "question": "Do emotions (fear, greed, stress) affect your trading decisions?",
+        "caption": "Influence of Emotions on Trading",
+        "data": [["Often", 16], ["Sometimes", 11], ["Rarely", 3]]
+      },
+      {
+        "question": "Would AI-generated insights on your own journal help you improve?",
+        "caption": "Perceived Value of AI Insights",
+        "data": [["Strongly agree", 15], ["Agree", 10], ["Neutral", 4], ["Disagree", 1]]
+      }
+    ],
+    "mentorQuestions": [
+      {
+        "question": "How do you currently review your students' trading records?",
+        "caption": "Mentor Review Methods",
+        "data": [["Screenshots on WhatsApp", 5], ["Shared spreadsheets", 3], ["Verbal discussion only", 2]]
+      },
+      {
+        "question": "What is the most common weakness you observe in retail traders?",
+        "caption": "Common Weaknesses Observed by Mentors",
+        "data": [["Poor risk management", 5], ["Overtrading", 3], ["Emotional trading", 2]]
+      }
+    ],
+    "adminQuestions": [
+      {
+        "question": "Would aggregated platform statistics help you support your community?",
+        "caption": "Value of Aggregated Statistics",
+        "data": [["Yes", 4], ["Not sure", 1]]
+      }
+    ]
+  }
+}

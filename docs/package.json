@@ -1,0 +1,15 @@
+{
+  "name": "ai-trading-journal-docs",
+  "private": true,
+  "description": "Builds the project documentation PDF (AI Trading Journal).",
+  "scripts": {
+    "build": "node build/build.mjs",
+    "screenshots": "node build/screenshots.mjs"
+  },
+  "devDependencies": {
+    "mermaid": "^12.0.0",
+    "pdf-lib": "^1.17.1",
+    "pdfjs-dist": "^6.3.289",
+    "puppeteer-core": "^25.12.0"
+  }
+}

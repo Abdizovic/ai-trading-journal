@@ -1,0 +1,6 @@
+# Supabase CLI configuration (deploy target: project gzkllnwjxwalnedfljag).
+project_id = "ai-trading-journal"
+
+[functions.analyze-performance]
+# The function requires a valid user JWT; the gateway rejects anonymous calls.
+verify_jwt = true
